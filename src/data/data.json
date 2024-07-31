@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Morning Exercise",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnbMJYAEr3dd41YRzCkG8vlyosKef5Ak9aViunVYcBj8AfMZSx7bm_W-TjAw&s"
+  },
+  {
+    "id": 2,
+    "title": "Breakfast",
+    "image": "https://t3.ftcdn.net/jpg/00/78/87/94/360_F_78879462_KyMC4iWhDHLlEEZDAOLiDWPuubnAaMMk.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Work",
+    "image": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?cs=srgb&dl=pexels-luis-gomes-166706-546819.jpg&fm=jpg"
+  },
+  {
+    "id": 4,
+    "title": "Lunch",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY4lqPCoOYCJ27GueDyWb6HYbw7uGIGMUCsRPNIEfmrza9gZuYmtO9O46AcQ&s"
+  },
+  {
+    "id": 5,
+    "title": "Meeting",
+    "image": "https://thumbs.dreamstime.com/b/business-meeting-silhouette-sunset-37284204.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Afternoon Break",
+    "image": "https://media.istockphoto.com/id/983707350/de/foto/einfache-lebensstil-entspannung-mit-asiatischen-arbeitenden-gesch%C3%A4ftsfrau-gesunden-lebensstil.jpg?s=612x612&w=0&k=20&c=f7fA05hQf9S_o-rfjzCS-GTiHeSX4eodXNoLOWBJOHY="
+  },
+  {
+    "id": 7,
+    "title": "Grocery Shopping",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8nojaicT-pbOhwXgR1K-ecSGw5FXDpnVw8TXhoHvhYP-VKv9Hb_eSNKUDA&s"
+  },
+  {
+    "id": 8,
+    "title": "Dinner",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU8zRVgzn5xuul1TQD87xyE1KY8J_mx88LIti0BQl3hq4yqcMyD-K2Ah2jPA&s"
+  },
+  {
+    "id": 9,
+    "title": "Evening Walk",
+    "image": "https://img.freepik.com/free-photo/fit-young-woman-running-park_23-2148381950.jpg?w=826&t=st=1722434520~exp=1722435120~hmac=b915120c6d04ea99ebe4d9f63f51e82c96b197adbe930d6c4030de6278d773ff"
+  },
+  {
+    "id": 10,
+    "title": "Reading",
+    "image": "https://media.wired.com/photos/5955c3573ff99d6b3a1d165c/master/pass/books.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Sleep",
+    "image": "https://t4.ftcdn.net/jpg/07/44/90/27/240_F_744902798_xyN2XFHCB1wTTVqlDmZkL2h2gQKKxFKy.jpg"
+  }
+]
