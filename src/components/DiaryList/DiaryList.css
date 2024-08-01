@@ -1,0 +1,45 @@
+.diary-list {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background: linear-gradient(
+    to bottom,
+    #ed7071 0%,
+    #ed7071 100%,
+    #545f68 100%,
+    #545f68 100%
+  );
+
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #445d67;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+}
+
+.entries {
+  padding: 20px;
+}
+
+.entry {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
