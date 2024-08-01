@@ -1,0 +1,68 @@
+.entry-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.entry-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.entry-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  width: 100px;
+  height: 45px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  left: 226px;
+  top: 746px;
+  background: #f27171;
+  border-radius: 343px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+.entry-modal .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 34px;
+  color: #030303;
+}
+
+.entry-modal .date {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 34px;
+  color: #030303;
+}
+
+.entry-modal .content {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 34px;
+  color: #030303;
+}
