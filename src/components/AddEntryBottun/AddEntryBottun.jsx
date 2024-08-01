@@ -1,4 +1,4 @@
-import { FaPlus } from "react-icons/fa"; // Import the settings icon
+import { FaPlus } from "react-icons/fa"; //Import the plus icon
 import "./AddEntryButton.css";
 const AddEntryBottun = () => {
   return (

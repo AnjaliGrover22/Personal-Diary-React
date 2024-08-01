@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   background-color: #445d67; /* Match the color from the image */
   color: white;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   position: fixed;
-  bottom: 20px; /* Adjust this value to position the button at the bottom */
-  right: 20px; /* Adjust this value to position the button to the right */
+  bottom: 10px; /* Adjust this value to position the button at the bottom */
+  right: 250px; /* Adjust this value to position the button to the right */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
