@@ -18,8 +18,9 @@
 }
 
 .entry-image {
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /*Ensure the image covers the area, maintaining aspect ratio */
   margin-top: 10px;
   margin-bottom: 10px;
 }
