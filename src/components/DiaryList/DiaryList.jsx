@@ -4,28 +4,25 @@ import { FaCog } from "react-icons/fa"; // Import the settings icon
 import { getDiaryEntries } from "../../utils/entryCardUtils";
 import AddEntryBottun from "../AddEntryBottun/AddEntryBottun.jsx";
 import logoImage from "../../assets/photo_2024-08-01_14-40-31.jpg";
-
-const entries = [
-  {
-    date: "2024-07-30",
-    text: "Today I went into the market and bought some fresh vegetables.",
-  },
-  {
-    date: "2024-07-31",
-    text: "I went jogging in the park today.",
-  },
-  {
-    date: "2024-08-01",
-    text: "Read a fascinating book in the afternoon.",
-  },
-];
+import EntryModal from "../EntryModal/EntryModal.jsx";
 
 const DiaryList = () => {
+  const [entries, setEntries] = useState([]);
+  const [selectedEntry, setSelectedEntry] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const handleCardClick = (entry) => {
+    setSelectedEntry(entry);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedEntry(null);
+  };
+
   useEffect(() => {
-    const storedEntries = JSON.parse(localStorage.getItem("diaryEntries"));
-    if (!storedEntries || storedEntries.length === 0) {
-      localStorage.setItem("diaryEntries", JSON.stringify(entries));
-    }
+    const storedEntries = getDiaryEntries();
+    setEntries(storedEntries);
   }, []);
 
   return (
@@ -39,13 +36,22 @@ const DiaryList = () => {
       </header>
       <div className="entries">
         {entries.map((entry, index) => (
-          <div className="entry" key={index}>
+          <div
+            className="entry"
+            key={index}
+            onClick={() => handleCardClick(entry)}
+          >
             <div className="date">{entry.date}</div>
             <div className="text">{entry.text}</div>
           </div>
         ))}
       </div>
       <AddEntryBottun />
+      <EntryModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        entry={selectedEntry}
+      />
     </div>
   );
 };
