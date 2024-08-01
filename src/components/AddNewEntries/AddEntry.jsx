@@ -67,11 +67,21 @@ const AddEntry = () => {
   //handling message input
 
   const [content, setContent] = useState("");
+  const [finish, setFinish] = useState(true);
 
   const handleMessageContent = (event) => {
     const message = event.target.value;
     setContent(message);
+    setFinish(false);
     console.log("message", message);
+  };
+
+  //Form Submission
+
+  const [formData, setFormData] = useState("");
+
+  const handleSubmit = () => {
+    setFormData("Form Saved Successfully"); // Set the message when button is clicked
   };
 
   return (
@@ -188,9 +198,11 @@ const AddEntry = () => {
                   name="imageUpload"
                   accept="image/*"
                   onChange={handleImageChange}
+                  placeholder="Update Image"
                   className="border border-gray-300 rounded-lg p-2"
                 />
               </div>
+              {/* shows the updated image here */}
               <div>
                 {image && (
                   <div>
@@ -199,9 +211,13 @@ const AddEntry = () => {
                       alt="Selected Preview"
                       className="w-full h-auto border rounded-lg mt-4"
                     />
+                    <p className="mt-5 text-white custom-header-bg-color text-center ">
+                      Image Uploaded Successfully
+                    </p>
                   </div>
                 )}
               </div>{" "}
+              {/* Shows only those images which matches to the title */}
               <div>
                 {!editImage &&
                   selectedOption &&
@@ -221,10 +237,10 @@ const AddEntry = () => {
               </div>
             </div>
             {/* Text Area */}
-            <div className="mt-14 ml-16">
+            <div className="mt-12 ml-16">
               <label
                 htmlFor="content"
-                className="block mb-2 text-gray-700 font-semibold text-lg bg-custom-lighter-pink max-w-full"
+                className="block mb-2 text-gray-700 bg-custom-lighter-pink font-semibold text-lg  max-w-full"
               >
                 Your Content
               </label>
@@ -233,8 +249,36 @@ const AddEntry = () => {
                 id="content"
                 value={content}
                 onChange={handleMessageContent}
-                className="w-64 border border-gray-300 rounded-lg p-2 text-gray-800"
+                placeholder="Today I went into the....."
+                className="w-full mt-4  rounded-lg p-2 font-medium text-black custom-textarea border-slate-800  "
               ></textarea>
+
+              {!finish && content && (
+                <p className="mt-5 text-white custom-header-bg-color text-center ">
+                  You can write upto 500 words
+                </p>
+              )}
+            </div>
+            <div className="flex  justify-between p-4 w-full max-w-4xl">
+              <button className="button rounded-full text-white" type="button">
+                Cancel
+              </button>
+              <button
+                className="button rounded-full text-white"
+                type="button"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
+            </div>
+            <div>
+              {formData && (
+                <div className="mt-4 justify-center">
+                  <p className="mt-5 text-white custom-header-bg-color w-56 text-center ">
+                    Your Diary is filled Successfully.
+                  </p>
+                </div>
+              )}
             </div>
           </form>
         </div>
