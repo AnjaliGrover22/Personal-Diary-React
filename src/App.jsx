@@ -1,9 +1,10 @@
 import "./App.css";
+import AddEntry from "./components/AddEntry";
 
 function App() {
   return (
     <div>
-      <h1>Personal Diary</h1>
+      <AddEntry />
     </div>
   );
 }
