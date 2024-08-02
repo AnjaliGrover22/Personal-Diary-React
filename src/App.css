@@ -1,3 +1,9 @@
+
+/* Applied Styles for custom header background color*/
+.custom-header-bg-color {
+  @apply bg-custom-header-bg-color;
+}
+/* General Styles for the application */
 html,
 body,
 #root,
