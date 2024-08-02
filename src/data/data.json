@@ -3,60 +3,60 @@
     "id": 1,
     "date": "2024-07-31",
     "title": "Read a fascinating book in the afternoon",
-    "imageUrl": "../assets/book.jpeg"
+    "image": "../assets/book.jpeg"
   },
   {
     "id": 2,
     "date": "2024-07-30",
     "title": "Went jogging in the park today",
-    "imageUrl": "../assets/jogging.jpg"
+    "image": "../assets/jogging.jpg"
   },
   {
     "id": 3,
     "date": "2024-07-29",
     "title": "Went for shopping",
-    "imageUrl": "../assets/shopping.jpeg"
+    "image": "../assets/shopping.jpeg"
   },
   {
     "id": 4,
     "date": "2024-07-28",
     "title": "Cooked a delicious homemade meal",
-    "imageUrl": "../assets/cooking.jpeg"
+    "image": "../assets/cooking.jpeg"
   },
   {
     "id": 5,
     "date": "2024-07-27",
     "title": "Worked on a new hobby project",
-    "imageUrl": "../assets/hobby.jpeg"
+    "image": "../assets/hobby.jpeg"
   },
   {
     "id": 6,
     "date": "2024-07-26",
     "title": "Had a relaxing yoga session",
-    "imageUrl": "../assets/yoga.jpeg"
+    "image": "../assets/yoga.jpeg"
   },
   {
     "id": 7,
     "date": "2024-07-25",
     "title": "Caught up with an old friend over coffee",
-    "imageUrl": "../assets/coffee.jpeg"
+    "image": "../assets/coffee.jpeg"
   },
   {
     "id": 8,
     "date": "2024-07-24",
     "title": "Went to work",
-    "imageUrl": "../assets/work.jpeg"
+    "image": "../assets/work.jpeg"
   },
   {
     "id": 9,
     "date": "2024-07-23",
     "title": "Answer Emails",
-    "imageUrl": "../assets/email.png"
+    "image": "../assets/email.png"
   },
   {
     "id": 10,
     "date": "2024-07-22",
     "title": "Went for a bike ride around the neighborhood",
-    "imageUrl": "../assets/bike.jpeg"
+    "image": "../assets/bike.jpeg"
   }
 ]

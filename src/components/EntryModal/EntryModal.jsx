@@ -16,8 +16,8 @@ const EntryModal = ({ isOpen, onRequestClose, entry }) => {
         <strong>Date:</strong> {entry.date}
       </p>
       <h2 className="title">{entry.title}</h2>
-      {entry.imageUrl && (
-        <img src={entry.imageUrl} alt={entry.title} className="entry-image" />
+      {entry.image && (
+        <img src={entry.image} alt={entry.title} className="entry-image" />
       )}
       <p className="content">{entry.text}</p>
       <button className="close-btn" onClick={onRequestClose}>
