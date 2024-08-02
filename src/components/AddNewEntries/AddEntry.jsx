@@ -4,6 +4,7 @@ import { useState } from "react";
 import DateTime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 import { format } from "date-fns";
+import validateForm from "../../utils/validateForm";
 
 const AddEntry = () => {
   const [dateTime, setDateTime] = useState(null);
@@ -81,13 +82,26 @@ const AddEntry = () => {
   const [formData, setFormData] = useState("");
 
   const handleSubmit = () => {
-    setFormData("Form Saved Successfully"); // Set the message when button is clicked
+    console.log("I am in handle submit");
+    const missingFields = validateForm({
+      dateTime,
+      selectedOption,
+      content,
+    });
+
+    if (missingFields.length === 0) {
+      setFormData("Form saved Successfully");
+    } else {
+      alert(
+        `Please fill out the following fields: ${missingFields.join(", ")}`
+      );
+    }
   };
 
   return (
     <>
       {/* header part */}
-      <div className="container mx-auto p-4 w-full max-w-3xl">
+      <div className="container mx-auto h-auto p-4  w-full max-w-3xl">
         <div className="flex items-center justify-between custom-header-bg-color text-white p-4 w-full max-w-4xl ">
           <div>
             {" "}
@@ -124,10 +138,10 @@ const AddEntry = () => {
           </div>
         </div>
         {/* Form Container */}
-        <div className=" add-entry w-full max-w-3xl rounded-none ">
-          <form className="bg-white p-8 rounded-xl m-5">
+        <div className=" add-entry w-full max-w-3xl rounded-none flex-col justify-center items-center ">
+          <form className="bg-white p-8 rounded-xl m-5 flex-col justify-center items-center">
             {/* Date Starts here */}
-            <div className="mt-8 ml-16">
+            <div className="m-4">
               <label
                 htmlFor="date"
                 className="block mb-2  font-semibold text-lg bg-custom-lighter-pink max-w-full text-custom-header-bg-color"
@@ -144,8 +158,8 @@ const AddEntry = () => {
                 className="w-64 border-b border-gray-300 focus:border-gray-700 rounded-none p-2 text-gray-800"
               />
               {dateTime && (
-                <div className="text-center mt-4">
-                  <p className="text-white custom-header-bg-color text-center ">
+                <div className="text-center mt-1">
+                  <p className="mt-2 text-white custom-header-bg-color text-center ">
                     Selected Date:-{formatDateTime(dateTime)}
                   </p>
                 </div>
@@ -153,7 +167,7 @@ const AddEntry = () => {
             </div>
             {/* Dropdown Starts here:- */}
 
-            <div className="mt-14 ml-16">
+            <div className="m-4">
               <label
                 htmlFor="dropdown"
                 className="block mb-2 text-gray-700 font-semibold text-lg bg-custom-lighter-pink max-w-full"
@@ -177,7 +191,7 @@ const AddEntry = () => {
               </select>
               {selectedOption && (
                 <div className="text-center mt-4">
-                  <p className="mt-5 text-white custom-header-bg-color text-center ">
+                  <p className="mt-2 text-white custom-header-bg-color text-center ">
                     Selected Title: {selectedOption}
                   </p>
                 </div>
@@ -185,7 +199,7 @@ const AddEntry = () => {
             </div>
             {/* Image section */}
             <div>
-              <div className="mt-14 ml-16">
+              <div className="m-4">
                 <label
                   htmlFor="imageUpload"
                   className="block mb-2 text-gray-700 font-semibold text-lg bg-custom-lighter-pink max-w-full"
@@ -203,22 +217,22 @@ const AddEntry = () => {
                 />
               </div>
               {/* shows the updated image here */}
-              <div>
+              <div className="flex justify-center items-center">
                 {image && (
                   <div>
                     <img
                       src={image}
                       alt="Selected Preview"
-                      className="w-full h-auto border rounded-lg mt-4"
+                      className="w-80 h-60 border rounded-lg mt-4"
                     />
                     <p className="mt-5 text-white custom-header-bg-color text-center ">
-                      Image Uploaded Successfully
+                      Image Updated Successfully
                     </p>
                   </div>
                 )}
               </div>{" "}
               {/* Shows only those images which matches to the title */}
-              <div>
+              <div className="flex justify-center items-center">
                 {!editImage &&
                   selectedOption &&
                   // Find the first item where title matches selectedOption
@@ -229,7 +243,7 @@ const AddEntry = () => {
                         <img
                           src={item.image}
                           alt="Selected Preview"
-                          className="w-full h-auto border rounded-lg mt-4"
+                          className="w-80 h-60 border rounded-lg mt-4"
                         />
                       </div>
                     ) : null;
@@ -237,7 +251,7 @@ const AddEntry = () => {
               </div>
             </div>
             {/* Text Area */}
-            <div className="mt-12 ml-16">
+            <div className="m-4">
               <label
                 htmlFor="content"
                 className="block mb-2 text-gray-700 bg-custom-lighter-pink font-semibold text-lg  max-w-full"
