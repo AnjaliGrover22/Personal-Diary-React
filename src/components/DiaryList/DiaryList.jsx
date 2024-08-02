@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./DiaryList.css";
 import { FaCog } from "react-icons/fa"; // Import the settings icon
-import { getDiaryEntries } from "../../utils/entryCardUtils";
+import { getDiaryEntries, saveDiaryEntries } from "../../utils/entryCardUtils";
 import AddEntryBottun from "../AddEntryBottun/AddEntryBottun.jsx";
 import logoImage from "../../assets/photo_2024-08-01_14-40-31.jpg";
 import EntryModal from "../EntryModal/EntryModal.jsx";
@@ -22,7 +22,12 @@ const DiaryList = () => {
 
   useEffect(() => {
     const storedEntries = getDiaryEntries();
-    setEntries(storedEntries);
+    if (storedEntries.length === 0) {
+      saveDiaryEntries(entries);
+      setEntries(entries);
+    } else {
+      setEntries(storedEntries);
+    }
   }, []);
 
   return (
@@ -42,7 +47,7 @@ const DiaryList = () => {
             onClick={() => handleCardClick(entry)}
           >
             <div className="date">{entry.date}</div>
-            <div className="text">{entry.text}</div>
+            <div className="text">{entry.title}</div>
           </div>
         ))}
       </div>
