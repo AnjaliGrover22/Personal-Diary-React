@@ -12,3 +12,7 @@ export const getDiaryEntries = () => {
     return [];
   }
 };
+
+export const saveDiaryEntries = (entries) => {
+  localStorage.setItem("diaryEntries", JSON.stringify(entries));
+};
