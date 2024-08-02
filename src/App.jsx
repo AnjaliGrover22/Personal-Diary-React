@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <DiaryList />
-      <AddEntry />
+      {/* <AddEntry /> */}
     </div>
   );
 };
