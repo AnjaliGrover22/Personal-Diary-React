@@ -3,8 +3,7 @@ import "./DiaryList.css";
 import { FaCog } from "react-icons/fa"; // Import the settings icon
 import { getDiaryEntries } from "../../utils/entryCardUtils";
 import AddEntryButton from "../AddEntryButton/AddEntryButton.jsx";
-import { getDiaryEntries, saveDiaryEntries } from "../../utils/entryCardUtils";
-import AddEntryBottun from "../AddEntryBottun/AddEntryBottun.jsx";
+import { saveDiaryEntries } from "../../utils/entryCardUtils";
 import logoImage from "../../assets/photo_2024-08-01_14-40-31.jpg";
 import EntryModal from "../EntryModal/EntryModal.jsx";
 import data from "../../data/data.json";
