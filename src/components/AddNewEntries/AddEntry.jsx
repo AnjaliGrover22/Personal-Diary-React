@@ -101,7 +101,7 @@ const AddEntry = () => {
   return (
     <>
       {/* header part */}
-      <div className="container mx-auto h-auto p-4  w-full max-w-3xl">
+      <div className="container custom-header-bg-color  h-3/5 mx-auto p-2 w-full max-w-3xl  overflow-y-auto">
         <div className="flex items-center justify-between custom-header-bg-color text-white p-4 w-full max-w-4xl ">
           <div>
             {" "}
@@ -138,13 +138,13 @@ const AddEntry = () => {
           </div>
         </div>
         {/* Form Container */}
-        <div className=" add-entry w-full max-w-3xl rounded-none flex-col justify-center items-center ">
-          <form className="bg-white p-8 rounded-xl m-5 flex-col justify-center items-center">
+        <div className=" add-entry min-w-10 max-w-3xl   rounded-none flex-col justify-evenly items-center ">
+          <form className=" p-8 rounded-xl m-1 flex-col h-2/5 bg-white justify-center items-center">
             {/* Date Starts here */}
-            <div className="m-4">
+            <div className="m-1">
               <label
                 htmlFor="date"
-                className="block mb-2  font-semibold text-lg bg-custom-lighter-pink max-w-full text-custom-header-bg-color"
+                className="block mb-1  font-semibold text-lg bg-custom-lighter-pink max-w-full text-custom-header-bg-color"
               >
                 Date & Time
               </label>
@@ -159,7 +159,7 @@ const AddEntry = () => {
               />
               {dateTime && (
                 <div className="text-center mt-1">
-                  <p className="mt-2 text-white custom-header-bg-color text-center ">
+                  <p className="mt-1 text-white custom-header-bg-color text-center ">
                     Selected Date:-{formatDateTime(dateTime)}
                   </p>
                 </div>
@@ -167,7 +167,7 @@ const AddEntry = () => {
             </div>
             {/* Dropdown Starts here:- */}
 
-            <div className="m-4">
+            <div className="m-1">
               <label
                 htmlFor="dropdown"
                 className="block mb-2 text-gray-700 font-semibold text-lg bg-custom-lighter-pink max-w-full"
@@ -178,7 +178,7 @@ const AddEntry = () => {
                 id="dropdown"
                 value={selectedOption}
                 onChange={handleDropdownChange}
-                className="w-64 border border-gray-300 rounded-lg p-2 text-gray-800"
+                className="w-48 border border-gray-300 rounded-lg p-2 text-gray-800"
               >
                 <option value="" disabled>
                   Select an Option
@@ -190,8 +190,8 @@ const AddEntry = () => {
                 ))}
               </select>
               {selectedOption && (
-                <div className="text-center mt-4">
-                  <p className="mt-2 text-white custom-header-bg-color text-center ">
+                <div className="text-center mt-1">
+                  <p className="mt-1 text-white custom-header-bg-color text-center ">
                     Selected Title: {selectedOption}
                   </p>
                 </div>
@@ -199,10 +199,10 @@ const AddEntry = () => {
             </div>
             {/* Image section */}
             <div>
-              <div className="m-4">
+              <div className="m-1">
                 <label
                   htmlFor="imageUpload"
-                  className="block mb-2 text-gray-700 font-semibold text-lg bg-custom-lighter-pink max-w-full"
+                  className=" mb-1 text-gray-700 font-semibold text-lg bg-custom-lighter-pink "
                 >
                   Update Image
                 </label>
@@ -213,7 +213,7 @@ const AddEntry = () => {
                   accept="image/*"
                   onChange={handleImageChange}
                   placeholder="Update Image"
-                  className="border border-gray-300 rounded-lg p-2"
+                  className=" border-gray-300 rounded-lg p-2"
                 />
               </div>
               {/* shows the updated image here */}
@@ -223,9 +223,9 @@ const AddEntry = () => {
                     <img
                       src={image}
                       alt="Selected Preview"
-                      className="w-80 h-60 border rounded-lg mt-4"
+                      className=" h-60 border rounded-lg mt-1"
                     />
-                    <p className="mt-5 text-white custom-header-bg-color text-center ">
+                    <p className="mt-1 text-white custom-header-bg-color text-center ">
                       Image Updated Successfully
                     </p>
                   </div>
@@ -239,11 +239,11 @@ const AddEntry = () => {
                   (() => {
                     const item = data.find((i) => i.title === selectedOption);
                     return item ? (
-                      <div key={item.title}>
+                      <div key={item.image}>
                         <img
                           src={item.image}
                           alt="Selected Preview"
-                          className="w-80 h-60 border rounded-lg mt-4"
+                          className="w-80 h-60 border rounded-lg mt-1"
                         />
                       </div>
                     ) : null;
@@ -251,10 +251,10 @@ const AddEntry = () => {
               </div>
             </div>
             {/* Text Area */}
-            <div className="m-4">
+            <div className="m-1">
               <label
                 htmlFor="content"
-                className="block mb-2 text-gray-700 bg-custom-lighter-pink font-semibold text-lg  max-w-full"
+                className="block mb-1 text-gray-700 bg-custom-lighter-pink font-semibold text-lg  max-w-full"
               >
                 Your Content
               </label>
@@ -264,19 +264,19 @@ const AddEntry = () => {
                 value={content}
                 onChange={handleMessageContent}
                 placeholder="Today I went into the....."
-                className="w-full mt-4  rounded-lg p-2 font-medium text-black custom-textarea border-slate-800  "
+                className="w-full mt-1  rounded-lg p-2 font-medium text-black custom-textarea border-slate-800  "
               ></textarea>
 
               {!finish && content && (
-                <p className="mt-5 text-white custom-header-bg-color text-center ">
+                <p className="mt-1 text-white custom-header-bg-color text-center ">
                   You can write upto 500 words
                 </p>
               )}
             </div>
-            <div className="flex  justify-between p-4 w-full max-w-4xl">
-              <button className="button rounded-full text-white" type="button">
+            <div className="flex justify-between p-4 w-full max-w-4xl">
+              {/* <button className="button rounded-full text-white" type="button">
                 Cancel
-              </button>
+              </button> */}
               <button
                 className="button rounded-full text-white"
                 type="button"
@@ -287,8 +287,8 @@ const AddEntry = () => {
             </div>
             <div>
               {formData && (
-                <div className="mt-4 justify-center">
-                  <p className="mt-5 text-white custom-header-bg-color w-56 text-center ">
+                <div className="justify-center">
+                  <p className=" text-white custom-header-bg-color w-56 text-center ">
                     Your Diary is filled Successfully.
                   </p>
                 </div>
