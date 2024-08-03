@@ -1,0 +1,81 @@
+.add-entry-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #445d67; /* Match the color from the image */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px; /* Adjust this value to position the button at the bottom */
+  right: 250px; /* Adjust this value to position the button to the right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.add-entry-button:hover {
+  background-color: #3a4b57; /* Slightly darker color for hover effect */
+}
+
+.add-entry-icon {
+  font-size: 24px; /* Adjust icon size */
+}
+
+.add-entry-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #445d67; /* Match the color from the image */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px; /* Adjust this value to position the button at the bottom */
+  right: 250px; /* Adjust this value to position the button to the right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.add-entry-button:hover {
+  background-color: #3a4b57; /* Slightly darker color for hover effect */
+}
+
+.add-entry-icon {
+  font-size: 24px; /* Adjust icon size */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  overflow: auto;
+}
+
+.modal-content {
+  background: white; /* White background for the modal content */
+  padding: 20px;
+  border-radius: 8px; /* Ensure rounded corners */
+  border: none; /* Remove any borders */
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
+}
+
+.blur {
+  filter: blur(4px); /* Apply blur to the background content */
+}

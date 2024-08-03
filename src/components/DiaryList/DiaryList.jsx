@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./DiaryList.css";
 import { FaCog } from "react-icons/fa"; // Import the settings icon
+import { getDiaryEntries } from "../../utils/entryCardUtils";
+import AddEntryButton from "../AddEntryButton/AddEntryButton.jsx";
 import { getDiaryEntries, saveDiaryEntries } from "../../utils/entryCardUtils";
 import AddEntryBottun from "../AddEntryBottun/AddEntryBottun.jsx";
 import logoImage from "../../assets/photo_2024-08-01_14-40-31.jpg";
@@ -52,7 +54,7 @@ const DiaryList = () => {
           </div>
         ))}
       </div>
-      <AddEntryBottun />
+      <AddEntryButton />
       <EntryModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
