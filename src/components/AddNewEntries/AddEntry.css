@@ -51,3 +51,29 @@
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
 }
+
+/* Reset CSS to show the calendar icon */
+input[type="date"] {
+  border: 1px solid #ccc; /* Default border style */
+  padding: 8px;
+  font-size: 16px;
+  width: 38%; /* Adjust width as needed */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  background: white;
+  border-radius: 8px;
+}
+
+/* Show the calendar icon in WebKit browsers */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block; /* Ensure the calendar icon is visible */
+}
+
+/* Show the calendar icon in Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+  display: block; /* Ensure the calendar icon is visible */
+}
+
+/* Show the dropdown arrow in Internet Explorer/Edge */
+input[type="date"]::-ms-expand {
+  display: block; /* Ensure the dropdown arrow is visible */
+}

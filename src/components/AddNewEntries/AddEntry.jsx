@@ -1,23 +1,21 @@
 import "./AddEntry.css";
 import data from "../../data/data.json";
 import { useState } from "react";
-import DateTime from "react-datetime";
-import "react-datetime/css/react-datetime.css";
-import { format } from "date-fns";
-import validateForm from "../../utils/validateForm";
+import validateForm, { processFormData } from "../../utils/validateForm";
 
 const AddEntry = () => {
-  const [dateTime, setDateTime] = useState(null);
+  const [date, setDate] = useState(null);
 
   //Adding Date Events
-  const handleDateTimeChange = (date) => {
-    setDateTime(date);
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
   };
 
-  const formatDateTime = (date) => {
-    if (!date) return "";
-    const formatted = format(new Date(date), "d MMMM, yyyy h:mm a");
-    return formatted;
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    const [year, month, day] = dateStr.split("-");
+    // Example format: MM/DD/YYYY
+    return `${year}/${month}/${day}`;
   };
 
   //Adding Dropdown Events
@@ -84,13 +82,22 @@ const AddEntry = () => {
   const handleSubmit = () => {
     console.log("I am in handle submit");
     const missingFields = validateForm({
-      dateTime,
+      date,
       selectedOption,
       content,
     });
 
     if (missingFields.length === 0) {
-      setFormData("Form saved Successfully");
+      const item = data.find((i) => i.title === selectedOption);
+      const storedImageUrl = editImage ? image : item ? item.image : null;
+
+      processFormData({
+        date,
+        selectedOption,
+        content,
+        image: storedImageUrl,
+      });
+      // setFormData("Form saved Successfully");
     } else {
       alert(
         `Please fill out the following fields: ${missingFields.join(", ")}`
@@ -146,21 +153,21 @@ const AddEntry = () => {
                 htmlFor="date"
                 className="block mb-1  font-semibold text-lg bg-custom-lighter-pink max-w-full text-custom-header-bg-color"
               >
-                Date & Time
+                Date
               </label>
-              <DateTime
-                id="datetime"
-                name="datetime"
-                value={dateTime}
-                onChange={handleDateTimeChange}
-                dateFormat="D MMMM,YYYY"
-                timeFormat="h:mm A"
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={date}
+                onChange={handleDateChange}
                 className="w-64 border-b border-gray-300 focus:border-gray-700 rounded-none p-2 text-gray-800"
               />
-              {dateTime && (
+
+              {date && (
                 <div className="text-center mt-1">
                   <p className="mt-1 text-white custom-header-bg-color text-center ">
-                    Selected Date:-{formatDateTime(dateTime)}
+                    Selected Date: {formatDate(date)}
                   </p>
                 </div>
               )}
