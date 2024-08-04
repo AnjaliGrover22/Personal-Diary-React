@@ -27,7 +27,7 @@ const AddEntry = () => {
 
   const options = [];
   let titleName;
-  data.map((option) => {
+  data.forEach((option) => {
     titleName = option.title;
     options.push(titleName);
   });
@@ -38,7 +38,7 @@ const AddEntry = () => {
 
   const images = [];
   let currentimage;
-  data.map((im) => {
+  data.forEach((im) => {
     currentimage = im.image;
     images.push(currentimage);
   });
@@ -52,14 +52,20 @@ const AddEntry = () => {
   const [editImage, setEditImage] = useState(false);
 
   //handling image function
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
 
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImage(imageUrl);
-      setEditImage(true);
+      // Earlier I used createObjectURL
+      // const imageUrl = URL.createObjectURL(file);
+      // setImage(imageUrl);
+      // setEditImage(true);
+
+      // Converting it into base64
+      convertImageToBase64(file, (base64Image) => {
+        setImage(base64Image);
+        setEditImage(true);
+      });
     }
   };
 
@@ -78,6 +84,13 @@ const AddEntry = () => {
   //Form Submission
 
   const [formData, setFormData] = useState("");
+
+  // convert image to base64 for persistent url
+  const convertImageToBase64 = (file, callback) => {
+    const reader = new FileReader();
+    reader.onloadend = () => callback(reader.result);
+    reader.readAsDataURL(file);
+  };
 
   const handleSubmit = () => {
     console.log("I am in handle submit");
