@@ -4,7 +4,7 @@ import { useState } from "react";
 import validateForm, { processFormData } from "../../utils/validateForm";
 
 const AddEntry = () => {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState("");
 
   //Adding Date Events
   const handleDateChange = (event) => {
@@ -94,6 +94,7 @@ const AddEntry = () => {
 
   const handleSubmit = () => {
     console.log("I am in handle submit");
+    console.log("selected option", selectedOption);
     const missingFields = validateForm({
       date,
       selectedOption,

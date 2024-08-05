@@ -1,7 +1,8 @@
 const validateForm = ({ date, selectedOption, content }) => {
   let missingFields = [];
-  if (date === null) missingFields.push("Date");
-  if (selectedOption === "") missingFields.push("Title");
+  if (date === "") missingFields.push("Date");
+  if (selectedOption === "" || selectedOption === undefined)
+    missingFields.push("Title");
   if (content === "") missingFields.push("Your Content");
 
   return missingFields;
@@ -11,6 +12,7 @@ export default validateForm;
 
 export const processFormData = ({ date, selectedOption, content, image }) => {
   try {
+    let title = selectedOption;
     const storedEntries =
       JSON.parse(localStorage.getItem("diaryEntries")) || [];
 
@@ -20,14 +22,15 @@ export const processFormData = ({ date, selectedOption, content, image }) => {
       alert("Please come back again the next day.");
     } else {
       // Save new data
-      const newEntry = {
+      const entries = {
         date,
-        selectedOption,
+        title,
         content,
         image,
       };
+      console.log(entries, "New Entry");
 
-      storedEntries.push(newEntry);
+      storedEntries.push(entries);
 
       localStorage.setItem("diaryEntries", JSON.stringify(storedEntries));
 
